@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  jupyterhub:
+    image: quay.io/jupyterhub/jupyterhub:$SOFTWARE_VERSION_TAG
+    restart: always
+    command: >
+      sh -c "python3 -m pip install --no-cache-dir dockerspawner jupyterhub-nativeauthenticator &&
+             jupyterhub -f /srv/jupyterhub/jupyterhub_config.py"
+    ports:
+      - "172.17.0.1:17593:8000"
+    environment:
+      JUPYTERHUB_ADMIN: admin
+      DOCKER_NOTEBOOK_IMAGE: $DOCKER_NOTEBOOK_IMAGE
+      DOCKER_NOTEBOOK_DIR: /home/jovyan/work
+      DOCKER_NETWORK_NAME: jupyterhub-network
+    volumes:
+      - "./jupyterhub_config.py:/srv/jupyterhub/jupyterhub_config.py:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock:rw"
+      - "./jupyterhub-data:/data"
+    networks:
+      - jupyterhub-network
+
+networks:
+  jupyterhub-network:
+    name: jupyterhub-network
+    driver: bridge
