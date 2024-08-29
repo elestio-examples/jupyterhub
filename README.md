@@ -19,3 +19,4 @@ Currently, the username `admin` has administrative privileges. To grant addition
 
     c.PAMAuthenticator.admin_users = {'admin', ...}
 
+or can be done same through admin console.
