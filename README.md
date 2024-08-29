@@ -15,7 +15,7 @@ You can open JupyterHub UI here:
     URL: https://[CI_CD_DOMAIN]
     login: [ADMIN_EMAIL]
 
-Sign up using your email, will have admin privilages.
+Sign Up with your email to gain admin privileges.
 
 ### Documenation
 
