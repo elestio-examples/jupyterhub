@@ -20,3 +20,7 @@ Currently, the username `admin` has administrative privileges. To grant addition
     c.PAMAuthenticator.admin_users = {'admin', ...}
 
 or can be done same through admin console.
+
+### Documenation
+
+- For managing users you can follow the [Official Documentation](https://jupyterhub.readthedocs.io/en/stable/tutorial/getting-started/authenticators-users-basics.html).
