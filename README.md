@@ -13,9 +13,9 @@ Deploy JupyterHub server with CI/CD on Elestio
 You can open JupyterHub UI here:
 
     URL: https://[CI_CD_DOMAIN]
+    login: [ADMIN_EMAIL]
     password: [ADMIN_PASSWORD]
 
-Currently, the username `admin` has administrative privileges. 
 
 ### Documenation
 
