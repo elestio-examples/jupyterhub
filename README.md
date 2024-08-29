@@ -14,3 +14,8 @@ You can open JupyterHub UI here:
 
     URL: https://[CI_CD_DOMAIN]
     password: [ADMIN_PASSWORD]
+
+Currently, the username `admin` has administrative privileges. To grant additional users the same level of access, go to `./scripts/preInstall.sh` and add the desired users under the following line:
+
+    c.PAMAuthenticator.admin_users = {'admin', ...}
+
