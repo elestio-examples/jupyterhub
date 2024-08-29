@@ -35,4 +35,4 @@ lifeCycleConfig:
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
     label: "JupyterHub UI"
-    password: "[ADMIN_PASSWORD]"
+    login: "[ADMIN_EMAIL]"
