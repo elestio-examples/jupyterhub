@@ -52,13 +52,14 @@ c.JupyterHub.db_url = "sqlite:////data/jupyterhub.sqlite"
 
 # Allow all signed-up users to login
 c.Authenticator.allow_all = True
-c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
-c.PAMAuthenticator.admin_users = {'admin'}
 
-from jupyterhub.auth import DummyAuthenticator
-c.JupyterHub.authenticator_class = DummyAuthenticator
-c.DummyAuthenticator.password = '$ADMIN_PASSWORD'
+# Authenticate users with Native Authenticator
+c.JupyterHub.authenticator_class = "nativeauthenticator.NativeAuthenticator"
 
+# Allow anyone to sign-up without approval
+c.NativeAuthenticator.open_signup = True
+
+# Allowed admins
 admin = os.environ.get("JUPYTERHUB_ADMIN")
 if admin:
     c.Authenticator.admin_users = [admin]
