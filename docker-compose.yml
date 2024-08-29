@@ -10,7 +10,7 @@ services:
     ports:
       - "172.17.0.1:17593:8000"
     environment:
-      JUPYTERHUB_ADMIN: admin
+      JUPYTERHUB_ADMIN: $ADMIN_EMAIL
       DOCKER_NOTEBOOK_IMAGE: $DOCKER_NOTEBOOK_IMAGE
       DOCKER_NOTEBOOK_DIR: /home/jovyan/work
       DOCKER_NETWORK_NAME: jupyterhub-network

@@ -12,6 +12,8 @@ environments:
     value: "latest"
   - key: "ADMIN_PASSWORD"
     value: "random_password"
+  - key: "ADMIN_EMAIL"
+    value: "[EMAIL]"
   - key: "DOCKER_NOTEBOOK_IMAGE"
     value: "quay.io/jupyter/base-notebook:latest"
 config:
